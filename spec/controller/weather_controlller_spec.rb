@@ -13,10 +13,20 @@ RSpec.describe WeatherController, type: :controller do
     it 'renders current weather partial' do
       params = { weather: { address: address, forecast: false } }
       post :temperature, params: params, format: :turbo_stream
-      expect(response).to have_http_status(:success)
+
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include('<h3>Current Temperature for Rome </h3>')
     end
 
-    it 'return response as success as turbo stream' do
+    it 'renders forecast weather partial' do
+      params = { weather: { address: address, forecast: true } }
+      post :temperature, params: params, format: :turbo_stream
+
+      expect(response).to have_http_status(:ok)
+      expect(response.body).to include('<p>Forecast for Rome</p>')
+    end
+
+    it 'return response as error as turbo stream' do
       params = { weather: { address: '', forecast: false } }
       expect { post :temperature, params: params, format: :turbo_stream }.to raise_error('Please enter address')
       expect(response.body).to include('<turbo-stream action="replace" target="error">')

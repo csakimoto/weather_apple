@@ -14,7 +14,6 @@ class WeatherController < ApplicationController
     begin
       raise 'Please enter address' if weather_params[:address].blank?
 
-      puts weather_params
       # Used to display address in partials and to get weather data
       @address = weather_params[:address]
       @results = WeatherRetriever.retrieve(@address, forecast)

@@ -96,6 +96,12 @@ Make sure you have ruby 3.0.0 installed
 * RAILS_ENV=production bundle exec rails s -p 3000
 * Go to localhost:3000 url
 
+## Possible address inputs
+* 1 Infinite Loop Cupertino, CA
+* 85001
+* Rome
+* London, UK
+
 ## Possible Improvements
 * Could track address so we don't have to lookup address each time
 
