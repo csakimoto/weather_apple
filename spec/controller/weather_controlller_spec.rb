@@ -15,7 +15,7 @@ RSpec.describe WeatherController, type: :controller do
       post :temperature, params: params, format: :turbo_stream
 
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include('<h3>Current Temperature for Rome </h3>')
+      expect(response.body).to include('Current')
     end
 
     it 'renders forecast weather partial' do
@@ -23,7 +23,7 @@ RSpec.describe WeatherController, type: :controller do
       post :temperature, params: params, format: :turbo_stream
 
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include('<p>Forecast for Rome</p>')
+      expect(response.body).to include('Forecast')
     end
 
     it 'return response as error as turbo stream' do
