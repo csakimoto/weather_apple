@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag 'weather', media: 'all' %>
+<div class="container">
+  <div>
+    <div style="margin-top: 50px;">
+      <h1>What's the temperature?</h1>
+    </div>
+    <div>
+      <%= turbo_frame_tag 'error' do %>
+        <%= yield %>
+      <% end %>
+    </div>
+    <div style="margin-top: 50px;">
+      <%= turbo_frame_tag "weather" do %>
+        <%= form_with url: temperature_weather_index_url, data:{ turbo_frame: :temperature } do |form| %>
+          <label>
+            <span style="font-size: larger">Address:</span>
+            <%= form.text_field 'weather[address]', class: 'address-input', placeholder: 'ex. 1 Infinite Loop in Cupertino, California' %>
+          </label>
+          <%= form.submit 'Go', class: 'submit-btn' %>
+
+          <label style="margin-left: 10px;">
+            <span>Forecast</span>
+            <%= form.check_box 'weather[forecast]' %>
+          </label>
+        <% end %>
+        <div>
+          <%= turbo_frame_tag 'temperature' do %>
+            <%= yield %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+

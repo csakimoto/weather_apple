@@ -1,0 +1,7 @@
+<div style="margin-top: 50px;">
+  <h1>Charted Forecast by Hour</h1>
+  <p>Forecast for <%= @address %></p>
+  <div style="display: flex; justify-content: center">
+    <%= line_chart @results, xtitle: "Date/Time (UTC)", ytitle: "Temperature(F°)", width: "900px", height: "500px" %>
+  </div>
+</div>
