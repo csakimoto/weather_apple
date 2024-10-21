@@ -3,7 +3,7 @@
 # Description: This class is responsible for retrieving the weather data based on an address.
 # Using Google Maps API to get coordinates and zipcode based on address and the OpenWeather API
 class WeatherRetriever
-  attr_reader :address, :forecast
+  attr_reader :address, :forecast, :used_cache
 
   def self.retrieve(address, forecast)
     new(address, forecast).retrieve
@@ -12,6 +12,7 @@ class WeatherRetriever
   def initialize(address, forecast)
     @address = address
     @forecast = forecast
+    @used_cache = false
   end
 
   # If forecast is true return 7 day forecast, otherwise just return the current temperature
@@ -60,8 +61,10 @@ class WeatherRetriever
   # get weather either from redis or ping weather api
   def retrieve_weather
     @retrieve_weather ||= if $redis.get(redis_key)
+                            @used_cache = true
                             JSON.parse($redis.get(redis_key))
                           else
+                            @used_cache = false
                             forecast ? forecast_weather : current_weather
                           end
   end

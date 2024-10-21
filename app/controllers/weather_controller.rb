@@ -16,7 +16,9 @@ class WeatherController < ApplicationController
 
       # Used to display address in partials and to get weather data
       @address = weather_params[:address]
-      @results = WeatherRetriever.retrieve(@address, forecast)
+      weather_retriever = WeatherRetriever.new(@address, forecast)
+      @results = weather_retriever.retrieve
+      @used_cache = weather_retriever.used_cache
       raise 'Temperature/Forecast was not found for this address.' if @results.blank?
 
       # If forecast is true, render forecast partial, otherwise render current partial
