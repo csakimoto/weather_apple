@@ -27,35 +27,32 @@ class WeatherRetriever
 
   # parse results from Google Maps API to get the coordinates
   def coordinates
-    raise 'Address not found' if geolocation_data['results'].empty?
-
     @coordinates ||= GeolocationParser.coordinates(geolocation_data)
   end
 
   # Parses weather data to get current temperature value
   def current_weather
-    raise 'No weather data found' if weather_data.blank?
-
     WeatherParser.current_weather(weather_data)
   end
 
   # Parses weather data to get forecast temperature values as a hash
   def forecast_weather
-    raise 'No weather data found' if weather_data.blank?
-
     WeatherParser.forecast_weather(weather_data)
   end
 
   # ping GoogleMaps API to retrieve geolocation data
   def geolocation_data
-    @geolocation_data ||= Client::GoogleMaps.request(:get, { address: address })
+    @geolocation_data ||= begin
+      data = Client::GoogleMaps.request(:get, { address: address })
+      raise 'Address is not found.' if data.blank?
+
+      data
+    end
   end
 
   # Create redis key based on zipcode or city name
   # If forecast is true, append '-f' to the key
   def redis_key
-    raise 'Address not found' if geolocation_data['results'].empty?
-
     key = GeolocationParser.redis_key(geolocation_data)
     @redis_key ||= forecast ? "#{key}-f" : key
   end
@@ -77,7 +74,12 @@ class WeatherRetriever
   # ping open weather api to get weather based on coordinates [latitude, longitude]
   # Returns response from OpenMeteo API
   def weather_data
-    @weather_data ||= Client::Weather.request(:get, coordinates, { forecast: forecast })
+    @weather_data ||= begin
+      data = Client::Weather.request(:get, coordinates, { forecast: forecast })
+      raise 'Weather data is not found.' if data.blank?
+
+      data
+    end
   end
 
 end
