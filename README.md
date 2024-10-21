@@ -30,10 +30,12 @@
 
 ## Installation
 Make sure you have ruby 3.0.0 installed
+* Clone the repository
 * https://rvm.io/
 * https://github.com/rbenv/rbenv
 * bundle install
 * yarn
+* add master.key to config = b0a5ced451c5aacc511db5e24913cc9a
 
 ## Controllers
 * Weather controller
