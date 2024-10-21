@@ -41,12 +41,10 @@
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v7.0.8.4, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.7, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.2, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="base64 (v0.2.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.18.4, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.3.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.5.16, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="capybara (v3.40.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="chartkick (v5.0.2, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.3.4, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.4.1, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -70,7 +68,6 @@
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.22.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.4, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="matrix (v0.4.2, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="method_source (v1.1.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.5, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.25.1, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -112,8 +109,6 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.66.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.32.3, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.25.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.5.2, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.4, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -125,12 +120,9 @@
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v2.6.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uri (v0.13.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v4.2.1, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="webdrivers (v5.2.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webmock (v3.18.1, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="websocket (v1.2.11, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.6, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, RVM: ruby-3.0.0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.6.18, RVM: ruby-3.0.0) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">

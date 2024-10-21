@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :weather, only: [:index] do
     # Route to get the temperature based on forecast flag
     post :temperature, on: :collection
+
     # Route to clear the error message
     get :remove_error, on: :member
   end

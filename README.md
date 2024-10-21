@@ -30,10 +30,12 @@
 
 ## Installation
 Make sure you have ruby 3.0.0 installed
+* Clone the repository
 * https://rvm.io/
 * https://github.com/rbenv/rbenv
 * bundle install
 * yarn
+* add master.key to config = b0a5ced451c5aacc511db5e24913cc9a
 
 ## Controllers
 * Weather controller
@@ -80,7 +82,7 @@ Make sure you have ruby 3.0.0 installed
   * contains
     * form_for
       * text_field :address
-      * check_box :forcast
+      * check_box :forecast
     * turbo_frame: error
       * shows error message
     * turbo_frame: temperature
@@ -91,9 +93,19 @@ Make sure you have ruby 3.0.0 installed
   * Renders LineChart of related address temperature data based on F° and Day/Hour
 
 ## Start App
-* compile assets: rake assets:precompile
+* Compile assets: rake assets:precompile
+* Start redis: redis-server
 * RAILS_ENV=production bundle exec rails s -p 3000
 * Go to localhost:3000 url
+
+## Possible address inputs
+* 1 Infinite Loop Cupertino, CA
+* 85001
+* Rome
+* London, UK
+
+## Possible Improvements
+* Could track address so we don't have to lookup address each time
 
 
 
