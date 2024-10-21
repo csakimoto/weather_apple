@@ -44,14 +44,16 @@ RSpec.describe WeatherRetriever, type: :class do
       expect(zipcode).to eq('83605')
     end
 
-    it 'should raise error zipcode is not found' do
+    it 'should return blank results' do
       allow(Client::GoogleMaps).to receive(:request).with(:get, { address: address }).and_return( geolocation_data_no_results )
       geolocation_data = Client::GoogleMaps.request(:get, { address: address })
 
       expect(geolocation_data['results']).to eq([])
       expect(geolocation_data['status']).to eq('ZERO_RESULTS')
     end
+
   end
+
 
   describe 'retrieve' do
     before(:each) do
@@ -70,6 +72,18 @@ RSpec.describe WeatherRetriever, type: :class do
 
       weather_retriever = WeatherRetriever.new(address, true)
       expect(weather_retriever.retrieve).to be_present
+    end
+
+    it 'should raise error Weather data is not found' do
+      allow(Client::Weather).to receive(:request).with(:get, lat_lng, { forecast: true }).and_return(nil)
+
+      expect { WeatherRetriever.new(address, true).retrieve }.to raise_error('Weather data is not found.')
+    end
+
+    it 'should raise error Weather data is not found' do
+      allow(Client::GoogleMaps).to receive(:request).with(:get, { address: address }).and_return( nil )
+
+      expect { WeatherRetriever.new(address, true).retrieve }.to raise_error('Address is not found.')
     end
 
   end
