@@ -12,7 +12,6 @@ class GeolocationParser
     new(geolocation_data).redis_key
   end
 
-
   def initialize(geolocation_data)
     @geolocation_data = geolocation_data
   end
